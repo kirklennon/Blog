@@ -1,4 +1,7 @@
 *.pyc
+*.sqlite
+*.jpg
 .nova*
 *.DS_Store
 /venv/*
+/photos/migrations*
