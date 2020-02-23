@@ -1,0 +1,4 @@
+*.pyc
+.nova*
+*.DS_Store
+/venv/*
