@@ -2,26 +2,28 @@
 {% block title %}Welcome to my blog{% endblock %}
 
 {% block content %}
-    <h2>Locations</h2>
-    {% if locations %}
-        <ul>
-        {% for location in locations %}
-            <li><a href="{{ location.get_absolute_url }}">{{ location.title }}</a></li>
+
+    {% if posts %}
+        
+        {% for post in posts %}
+            <h2>{{ post.title }}</h2>
+                {{ post.body|safe }}
+            <p>Location: <a href="{{ post.location.get_absolute_url }}">{{ post.location }}</a></p>
         {% endfor %}
-        </ul>
+        
     {% else %}
         <p>There are no posts.</p>
     {% endif %}
 
-    <h2>Posts</h2>
-    {% if posts %}
-        <ul>
-        {% for post in posts %}
-            <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>There are no posts.</p>
-    {% endif %}
+<h2>Locations</h2>
+{% if locations %}
+    <ul>
+    {% for location in locations %}
+        <li><a href="{{ location.get_absolute_url }}">{{ location.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>There are no posts.</p>
+{% endif %}
 
 {% endblock %}
