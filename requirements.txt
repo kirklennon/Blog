@@ -1,2 +1,3 @@
 Pillow==7.0.0
 Django==3.0.3
+Django-ImageKit==4.0.2
