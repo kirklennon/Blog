@@ -8,3 +8,5 @@ This is a simple photo blog created using Django. Each post has one photo with a
 * The index view is currently limited to ten posts but it needs pagination added.
 * The location view needs the numerical limit and pagination added too.
 * I need to tweak the thumbnail code to generate higher (Retina) quality images.
+
+A live version of the blog is running at [photos.lennon.dev](https://photos.lennon.dev).
