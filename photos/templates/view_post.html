@@ -3,6 +3,7 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-    {{ post.body|safe }}
+    <a href="{{ post.image.url }}"><img src="{{ post.image_thumbnail.url }}"></a>
+    <p>{{ post.body|safe }}</p>
     <p>Location: <a href="{{ post.location.get_absolute_url }}">{{ post.location }}</a></p>
 {% endblock %}

@@ -1,13 +1,8 @@
 from django.contrib import admin
-from photos.models import Blog, Location, Image
+from photos.models import Blog, Location
 
 
 admin.site.register(Location)
 
-class InlineImage(admin.TabularInline):
-	model = Image
 
-class BlogAdmin(admin.ModelAdmin):
-    inlines = [InlineImage]
-
-admin.site.register(Blog,BlogAdmin)
+admin.site.register(Blog)
