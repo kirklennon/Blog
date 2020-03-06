@@ -13,9 +13,9 @@ class Blog(models.Model):
 	
 	image = models.ImageField(upload_to='photos/', null=True, blank=True)
 	image_thumbnail = ImageSpecField(source='image',
-									  processors=[Thumbnail(520, 520)],
+									  processors=[Thumbnail(1040, 1040)],
 									  format='JPEG',
-									  options={'quality': 60})
+									  options={'quality': 80})
 	def __str__(self):
 		return self.title
 

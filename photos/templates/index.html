@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
-{% block title %}Welcome to my blog{% endblock %}
+{% block title %}A Photo Blog{% endblock %}
 
 {% block content %}
 
     {% if posts %}
         
         {% for post in posts %}
-            <h2>{{ post.title }}</h2>
+            <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
                 <a href="{{ post.image.url }}"><img src="{{ post.image_thumbnail.url }}"></a>
                 <p>{{ post.body|safe }}</p>
             <p>Location: <a href="{{ post.location.get_absolute_url }}">{{ post.location }}</a></p>
