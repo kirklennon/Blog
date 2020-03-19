@@ -1,12 +1,16 @@
 from photos.models import Post, Location
 from django.shortcuts import render, get_object_or_404
+from django.core.paginator import Paginator
 
 def index(request):
+	all_posts = Post.objects.all()
 	locations = Location.objects.all()
-	posts = Post.objects.all()[:5]
+	paginator = Paginator(all_posts, 10)
+	page_number = request.GET.get('page')
+	posts = paginator.get_page(page_number)
 	context = {
 		'locations': locations,
-		'posts': posts
+		'posts': posts,
 	}
 	return render(request, 'index.html', context=context)
 
