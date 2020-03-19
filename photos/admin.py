@@ -1,8 +1,8 @@
 from django.contrib import admin
-from photos.models import Blog, Location
+from photos.models import Post, Location
 
 
 admin.site.register(Location)
 
 
-admin.site.register(Blog)
+admin.site.register(Post)

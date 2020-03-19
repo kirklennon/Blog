@@ -4,7 +4,7 @@ from django.contrib import admin
 from imagekit.models import ImageSpecField
 from imagekit.processors import Thumbnail
 
-class Blog(models.Model):
+class Post(models.Model):
 	title = models.CharField(max_length=100, unique=True)
 	slug = models.SlugField(max_length=100, unique=True)
 	body = models.TextField(null=True, blank=True)

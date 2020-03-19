@@ -25,7 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     url(r'^post/(?P<slug>[-\w\d\_]+)/$', 
-    views.BlogDetailView, 
+    views.PostDetailView, 
     name='blog_post_detail'),
     url(r'^location/(?P<slug>[-\w\d\_]+)/$', 
     views.LocationDetailView, 
