@@ -3,37 +3,8 @@
 <head>
 <title>{% block head_title %}Kirk Lennon&rsquo;s Photos{% endblock %}</title>
 <meta name="viewport" content="width=520">
-<style>
-body {
-	font-size: 16px;
-	background-color: #fff;
-	color: #333;
-	font-family: Garamond, Big Caslon, Baskerville, Georgia, serif;}
-header h1 {
-	font-size: 3rem;
-	margin: 1rem 0;
-	text-align: center;}
-header p {text-align: left;}
-header a {text-decoration: none;
-		color:#000;}
-h2 a {text-decoration: none;
-		color:#000;}
-main, header, footer {width: 30rem;}
-main img {display: block;
-		margin-left: auto;
-		margin-right: auto;
-		width: 100%;
-		height: auto}
-#wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	width: 100% }
-@media only screen and (max-device-width: 480px) {
-header, footer {max-width:90vw;}
-}
-</style>
+{% load static %}
+<link rel="stylesheet" href="{% static "photos/styles.css" %}">
 </head>
 <body>
 <div id="wrapper">

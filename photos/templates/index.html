@@ -15,23 +15,24 @@
     {% else %}
         <p>There are no posts.</p>
     {% endif %}
-    
-<div class="pagination">
-    <span class="step-links">
-        {% if posts.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ posts.previous_page_number }}">previous</a>
-        {% endif %}
 
-        <span class="current">
-            Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
-        </span>
+<div id="pagination">
+    {% if posts.has_previous %}
+    <p class="previous">
+        <a href="?page=1">&laquo; first</a>
+        <a href="?page={{ posts.previous_page_number }}">previous</a>
+    </p>
+    {% endif %}
 
-        {% if posts.has_next %}
-            <a href="?page={{ posts.next_page_number }}">next</a>
-            <a href="?page={{ posts.paginator.num_pages }}">last &raquo;</a>
-        {% endif %}
-    </span>
+    <p class="current">
+        Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+    </p>
+    {% if posts.has_next %}
+    <p class="next">
+        <a href="?page={{ posts.next_page_number }}">next</a>
+        <a href="?page={{ posts.paginator.num_pages }}">last &raquo;</a>
+    </p>
+    {% endif %}
 </div>
 
 <h2>Locations</h2>
