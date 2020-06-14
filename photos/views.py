@@ -20,8 +20,12 @@ def PostDetailView(request, slug):
 
 def LocationDetailView(request, slug):
 	location = get_object_or_404(Location, slug=slug)
-	posts = Post.objects.filter(location=location)[:5]
+	
+	paginator = Paginator(Post.objects.filter(location=location), 10)
+	page_number = request.GET.get('page')
+	posts = paginator.get_page(page_number)
 	context = {
 		'location': location,
-		'posts': posts}
+		'posts': posts,
+	}
 	return render(request, 'view_location.html', context=context)
